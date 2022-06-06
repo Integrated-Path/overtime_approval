@@ -27,6 +27,5 @@
         # 'security/rules.xml',
         'views/views.xml',
         
-        
     ],
 }
