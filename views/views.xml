@@ -7,7 +7,7 @@
 		<field name="inherit_id" ref="approvals.approval_category_view_form"></field>
 		<field name="arch" type="xml">
 
-			<xpath expr="//field[@name='automated_sequence']" position="after">
+			<xpath expr="//field[@name='automated_sequence']" position="before">
 				<field name="overtime_approval" groups="hr.group_hr_user" />
 				
 			</xpath>
