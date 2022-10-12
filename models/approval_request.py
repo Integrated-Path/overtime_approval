@@ -26,8 +26,8 @@ class ApprovalRequest(models.Model):
 			lambda x:
 				x.request_owner_id == employee_id.user_id and
 				x.category_id.overtime_approval == "by-hours" and
-				x.date_end >= start_date and
-				x.date_end <= end_date
+				x.date_end.date() >= start_date and
+				x.date_end.date() <= end_date
 		)
 		total_hours = 0
 		for approval_id in employee_approvals:
