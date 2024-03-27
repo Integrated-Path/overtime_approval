@@ -24,7 +24,7 @@ class ApprovalRequest(models.Model):
 		overtime_approvals = self.env["approval.request"].get_all_overtime_approvals()
 		employee_approvals = overtime_approvals.filtered(
 			lambda x:
-				x.request_owner_id == employee_id.name and
+				x.request_owner_id == employee_id.user_id and
 				x.category_id.overtime_approval == "by-hours" and
 				x.date_end.date() >= start_date and
 				x.date_end.date() <= end_date
@@ -51,7 +51,7 @@ class ApprovalRequest(models.Model):
 		overtime_approvals = self.env["approval.request"].get_all_overtime_approvals()
 		employee_approvals = overtime_approvals.filtered(
 			lambda x:
-				x.request_owner_id == employee_id.name and
+				x.request_owner_id == employee_id.user_id and
 				x.category_id.overtime_approval == "by-days" and
 				x.date_end.date() >= start_date and
 				x.date_end.date() <= end_date
